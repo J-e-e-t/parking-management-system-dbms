@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Parking management system</title>
+
+	<link rel="stylesheet" href="static/css/common.css">
+	<link rel="stylesheet" href="static/css/app.css">
+</head>
+<body style="background-color: rgb(227, 191, 100);" >
+	<section class="sidenav" style="background-color: darkgoldenrod;"">
+		<a href="#" class="sidenav__btn sidenav__btn--active" name="vehicleEntry">Vehicle Entry</a>
+		<a href="#" class="sidenav__btn" name="vehicleExit">Vehicle Exit & Billing</a>
+		<a href="#" class="sidenav__btn" name="stats">View Statistics</a>
+		<a href="#" class="sidenav__btn" name="manage">Manage</a>
+		<a href="api/logout" class="sidenav__btn logout">Logout</a>
+	</section>
+	<section class="content" >
+		<section class="content__vehicleEntry content--active">
+			<div class="vehicleEntryForm form">
+				<div class="form__element">
+					<span>Registration:</span>
+					<input class="vehicleEntryForm__registrationField" type="text" name="registration_1" maxlength="2" placeholder="SC"> - 
+					<input class="vehicleEntryForm__registrationField" type="text" name="registration_2" maxlength="4" placeholder="00XX"> - 
+					<input class="vehicleEntryForm__registrationField" type="text" name="registration_3" maxlength="4" placeholder="0000">
+				</div>
+				<div class="form__element">
+					<span>Brand:</span>
+					<input type="text" name="brand">
+				</div>
+				<div class="form__element">
+					<span>Model:</span>
+					<input type="text" name="model">
+				</div>
+				<div class="form__element">
+					<span>Color:</span>
+					<input type="color" name="color">
+				</div>
+				<div class="form__element">
+					<span>Type:</span>
+					<label><input type="radio" name="type" value="2"> Two-wheeler </label>
+					<label><input type="radio" name="type" value="4"> Four-wheeler </label>
+				</div>
+				<div class="form__element">
+					<span>Customer Name:</span>
+					<input class="vehicleEntryForm__customerNameField" type="text" name="firstName" placeholder="First Name">
+					<input class="vehicleEntryForm__customerNameField" type="text" name="lastName" placeholder="Last Name">
+				</div>
+				<div class="form__element">
+					<span>Phone:</span>
+					<input type="tel" name="phone">
+				</div>
+				<button>Submit</button>
+				<div class="form__response">
+					<span class="res__loading">Sending data...</span>
+					<span class="res__success">
+						Success! <span class="res__msg"></span>
+					</span>
+					<span class="res__fail">
+						Error! <span class="res__msg"></span>
+					</span>
+				</div>
+			</div>
+		</section>
+		<section class="content__vehicleExit">
+			<div class="viewVehicles"></div>
+		</section>
+		<section class="content__stats">
+			<div class="viewParkingSpace"></div>
+		</section>
+		<section class="content__manage">
+			<div class="manage__employee">
+				<div class="employee__nav nav">
+					<!-- <span>Employee:</span> -->
+					<!-- <button class="showList">View Employees</button> -->
+					<button class="showForm" name="showEmployeeForm">New Employee</button>
+				</div>
+				<div class="employeeForm form form--active">
+					<div class="form__element">
+						<span>SSN:</span>
+						<input type="number" name="ssn">
+					</div>
+					<div class="form__element">
+						<span>First Name:</span>
+						<input type="text" name="firstName">
+					</div>
+					<div class="form__element">
+						<span>Last Name:</span>
+						<input type="text" name="lastName">
+					</div>
+					<div class="form__element">
+						<span>Sex:</span>
+						<label><input type="radio" name="sex" value="M"> M </label>
+						<label><input type="radio" name="sex" value="F"> F </label>
+					</div>
+					<div class="form__element">
+						<span>Phone:</span>
+						<input type="tel" name="phone">
+					</div>
+					<button>Add Employee</button>
+					<div class="form__response">
+						<span class="res__loading">Sending data...</span>
+						<span class="res__success">
+							Success! <span class="res__msg"></span>
+						</span>
+						<span class="res__fail">
+							Error! <span class="res__msg"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="manage__parkingSpace">
+				<div class="parkingSpace__nav nav">
+					<!-- <span>Parking Space:</span> -->
+					<!-- <button class="showList">View Parking Spaces</button> -->
+					<button class="showForm" name="showParkingSpaceForm">New Parking Space</button>
+				</div>
+				<div class="parkingSpaceForm form">
+					<div class="form__element">
+						<span>Parking Space Name:</span>
+						<input type="text" name="area">
+					</div>
+					<div class="form__element">
+						<span>Slots:</span>
+						<input type="number" name="slots" min="0">
+					</div>
+					<div class="form__element">
+						<span>Admin SSN:</span>
+						<span class="formInput__loading formInput__loading--active">Loading...</span>
+						<select class="parkingSpaceForm__ssnField" name="ssn"></select>
+					</div>
+					<button>Add Parking Space</button>
+					<div class="form__response">
+						<span class="res__loading">Sending data...</span>
+						<span class="res__success">
+							Success! <span class="res__msg"></span>
+						</span>
+						<span class="res__fail">
+							Error! <span class="res__msg"></span>
+						</span>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+
+	<script src="static/js/app.js"></script>
+</body>
+</html>

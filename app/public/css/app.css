@@ -1,0 +1,144 @@
+.sidenav {
+	height: 100%;
+	width: 180px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 15px;
+	border-right: 2px solid grey;
+}
+
+.sidenav__btn {
+	display: block;
+	padding: 6px;
+	border-width: 3px 0;
+	border-style: solid;
+	border-color: darkslateblue;
+	border-radius: 5px;
+	margin: 30px auto;
+	color: black;
+	font-size: 1.1em;
+	text-decoration: none;
+	text-align: center;
+}
+
+.sidenav__btn--active {
+	background-color: #cacaca;
+}
+
+.logout {
+	border-color: #803838;
+}
+
+.content {
+	margin-left: 180px;
+	margin-top: 30px;
+	height: 100%;
+}
+
+.content > section {
+	display: none;
+}
+
+.content .content--active {
+	display: block;
+}
+
+.content__manage .nav {
+	text-align: center;
+}
+
+.content__manage .nav > * {
+	display: inline-block;
+	width: 200px;
+}
+
+.content__manage .form {
+	display: none;
+}
+
+.content__manage .form--active {
+	display: block;
+}
+
+.form {
+	width: 400px;
+	margin: 0 auto;
+}
+
+.form__element {
+	padding: 1em;
+}
+
+.form__element span {
+	display: inline-block;
+	width: 100px;
+}
+
+.form__element .formInput__loading {
+	display: none;
+	color: gray;
+}
+
+.form__element .formInput__loading--active {
+	display: inline-block;
+}
+
+.form button {
+	display: block;
+	margin: 0 auto;
+}
+
+.form__response {
+	padding-top: 1em;
+	text-align: center;
+}
+
+.form__response > * {
+	display: none;
+}
+
+.res--active {
+	display: inline;
+}
+
+.res__loading {
+	color: grey;
+}
+
+.res__success {
+	color: green;
+}
+
+.res__fail {
+	color: red;
+}
+
+.vehicleEntryForm {
+	width: 400px;
+	margin: 0 auto;
+}
+
+.vehicleEntryForm__registrationField {
+	width: 4em;
+}
+
+.vehicleEntryForm__customerNameField {
+	width: 8em;
+}
+
+.viewVehicles table, .viewParkingSpace table{
+	margin: 0 auto;
+}
+
+.viewVehicles table tr > *, .viewParkingSpace table tr > * {
+	padding: 1rem;
+	border: black solid 2px;
+	border-radius: 5px;
+}
+
+.viewVehicles table tr button {
+	padding: 0.5rem;
+	border-radius: 10px;
+	background-color: #ff7676;
+}
